@@ -45,14 +45,14 @@ red-hat-linux-administration/
 ├── README.md
 ├── notes/
 │   ├── linux-fundamentals.md
-│   ├── command-line.md
-│   ├── files-and-permissions.md
-│   ├── users-and-groups.md
-│   └── system-administration.md
+│   ├── introduction to shell
+│   ├── 
+│   ├── 
+│   └── 
 ├── practical-exercises/
-│   ├── basic-commands.md
-│   ├── file-management.md
-│   └── troubleshooting.md
+│   ├── Linux distributions 
+│   ├── Introduction to shell
+│   └── 
 └── progress/
     └── learning-log.md
 ```
