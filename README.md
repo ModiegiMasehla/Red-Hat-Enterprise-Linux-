@@ -2,34 +2,41 @@
 
 ## Overview
 
-This repository documents my learning journey through the free **Red Hat Enterprise Linux Technical Overview (RH024)** course.
+This repository documents my learning journey in Linux administration as I work through the free **Red Hat Enterprise Linux Technical Overview (RH024)** course offered by Red Hat.
 
-My goal is to develop a practical foundation in Linux, understand how Linux distributions differ, practise command-line tools and system administration, and build skills that complement software development, data engineering, cloud computing, and cybersecurity.
+My goal is to develop a strong foundation in Linux, gain practical experience with command-line tools and system administration, and build the skills needed to pursue Red Hat certifications and future opportunities in Linux administration, cloud computing, DevOps, and cybersecurity.
 
-I will use this repository to record notes, exercises, troubleshooting experiences, and progress through meaningful Git commits.
+I will use this repository to record my notes, practical exercises, commands, troubleshooting experiences, and progress through consistent Git commits.
 
 ## Learning Objectives
 
-- Understand Linux and Red Hat Enterprise Linux (RHEL) fundamentals.
-- Explain what a Linux distribution is and how distributions differ.
-- Become comfortable using the Linux command line.
-- Learn about packages and package-management tools.
-- Practise file management, users, permissions, processes, and services.
-- Document practical exercises and troubleshooting.
-- Build consistent documentation and version-control habits.
+- Understand Linux operating system fundamentals.
+- Become comfortable navigating the Linux command line.
+- Manage files, directories, users, groups, and permissions.
+- Learn essential Linux system administration concepts.
+- Understand processes, services, and system resources.
+- Practise basic system monitoring and troubleshooting.
+- Develop good documentation and version-control habits.
+- Build a foundation for further Red Hat Enterprise Linux training and certification.
 
-## Learning Progress
+## Topics Covered
 
-- [x] Video 1: Linux Distributions — watched on 15 October 2026
-- [ ] Linux fundamentals
+The following topics will be documented as I progress through the course and practical exercises.
+
+- [ ] Introduction to Linux and Red Hat Enterprise Linux
+- [ ] Linux architecture and operating system fundamentals
 - [ ] Command-line navigation and essential commands
-- [ ] Files, directories, permissions, users, and groups
-- [ ] Package management
-- [ ] Processes and services
+- [ ] File and directory management
+- [ ] File permissions and ownership
+- [ ] User and group management
+- [ ] Processes and system resource monitoring
+- [ ] Services and system administration basics
+- [ ] Software and package management concepts
 - [ ] Networking fundamentals
-- [ ] Logs and troubleshooting
+- [ ] System logs and troubleshooting
+- [ ] Practical exercises and revision notes
 
-See [`progress/learning-log.md`](progress/learning-log.md) for the learning record.
+*Progress will be updated as each topic is studied and practised.*
 
 ## Repository Structure
 
@@ -37,33 +44,64 @@ See [`progress/learning-log.md`](progress/learning-log.md) for the learning reco
 red-hat-linux-administration/
 ├── README.md
 ├── notes/
-│   ├── linux-distributions.md
 │   ├── linux-fundamentals.md
-│   ├── command-line.md
-│   ├── files-and-permissions.md
-│   ├── users-and-groups.md
-│   └── system-administration.md
+│   ├── introduction to shell
+│   ├── 
+│   ├── 
+│   └── 
 ├── practical-exercises/
-│   ├── linux-distributions-exercise.md
-│   ├── basic-commands.md
-│   ├── file-management.md
-│   └── troubleshooting.md
+│   ├── Linux distributions 
+│   ├── Introduction to shell
+│   └── 
 └── progress/
     └── learning-log.md
 ```
 
-Only the Linux distributions notes, its exercise, this README, and the learning log have been completed so far. The other topic files are intentionally empty placeholders for future lessons.
+The structure will evolve as I complete more lessons and practical exercises.
 
-## Learning Method
+## Practical Learning Approach
 
 For each topic, I aim to:
 
-1. Watch or read the course material.
-2. Write notes in my own words.
-3. Practise relevant commands or concepts.
-4. Complete an exercise without relying only on the notes.
-5. Record questions, errors, and lessons learned.
-6. Commit and push the work to GitHub.
+1. Study the relevant course material.
+2. Write concise notes in my own words.
+3. Practise commands in a Linux environment.
+4. Record examples and explain what each command does.
+5. Document errors, troubleshooting steps, and lessons learned.
+6. Commit and push my progress to GitHub.
+
+## Example Linux Commands
+
+Some basic commands I will practise and document include:
+
+| Command | Purpose |
+|---|---|
+| `pwd` | Display the current working directory |
+| `ls -la` | List files, including hidden files, with details |
+| `cd` | Change directories |
+| `mkdir` | Create a directory |
+| `touch` | Create an empty file or update its timestamp |
+| `cp` | Copy files or directories |
+| `mv` | Move or rename files |
+| `cat` | Display file contents |
+| `grep` | Search text for matching patterns |
+| `find` | Search for files and directories |
+| `whoami` | Display the current username |
+| `df -h` | Display filesystem disk usage |
+| `free -h` | Display memory usage |
+| `ps aux` | Display running processes |
+
+These examples are an initial practice list, not a claim that every topic has been completed.
+
+## Learning Log
+
+I will use the learning log to track:
+
+- **Date:** When I studied or practised a topic.
+- **Topic:** The concept covered.
+- **Practical work:** Commands or exercises completed.
+- **Challenges:** Errors or concepts that needed further research.
+- **Key takeaways:** What I learned and how I can apply it.
 
 ## Resources
 
@@ -72,25 +110,22 @@ For each topic, I aim to:
 - [Red Hat Customer Portal](https://access.redhat.com/)
 - [Linux man-pages project](https://www.kernel.org/doc/man-pages/)
 
-## Version Control
+## Version Control and Consistency
 
-Use meaningful commits that reflect the work completed. Examples:
+This repository is also an opportunity to practise Git and GitHub workflows. I will aim to make meaningful commits that reflect actual learning and progress.
+
+Example commit messages:
 
 ```text
-docs: add notes on Linux distributions
-learn: add Linux distributions exercise
-docs: update Linux learning log
-docs: add command-line learning notes
+docs: add Linux fundamentals notes
+docs: document essential command-line commands
+learn: add file management exercises
+learn: document Linux permissions
+docs: update learning progress log
 ```
 
 ## Career Goals
 
-Linux administration is a useful foundation for software development and can support future learning in cloud technologies, DevOps, data engineering, and cybersecurity. This repository will demonstrate my learning process through practical work and consistent documentation.
+Linux administration is an important foundation for my software engineering journey. I am particularly interested in developing skills that complement software development, data engineering, cloud technologies, and cybersecurity.
 
-## Disclaimer
-
-This is a personal learning repository. The notes and exercises are my own study materials and are not official Red Hat training materials. This repository does not constitute a Red Hat certification.
-
----
-
-**Learning in progress. Building practical skills one command at a time.**
+Through this project, I aim to demonstrate curiosity, consistency, practical problem-solving, and a commitment to continuous learning. I also hope to use
