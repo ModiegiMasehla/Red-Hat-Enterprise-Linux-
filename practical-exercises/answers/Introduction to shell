@@ -1,0 +1,119 @@
+#  Introduction to the Linux Shell (Answers)
+
+## Task 1 — Identify your environment
+
+- Current username: `root`
+- Current working directory: `/root` (the home directory)
+- Hostname: `vm`
+- Kernel release: `6.18.44-fc-v140`
+- Distribution name and version: Ubuntu 24.04.5 LTS (Noble Numbat)
+- Shell path: `/bin/bash`
+
+**Check your understanding:** `cat /etc/os-release` identifies the distribution. `uname -r` displays the kernel release.
+
+## Task 2 — Navigate directories and practise autocompletion
+
+- `pwd` showed my location, `cd ~` took me to `/root`, and `ls -la` listed all entries including hidden ones such as `.bashrc`, `.config` and `.cache`.
+- I created `shell-practice` with `mkdir`, entered it with `cd`, and `pwd` confirmed `/root/shell-practice`.
+- **Tab example:** typing `cd sh` and pressing `Tab` completes to `cd shell-practice/`, because it is the only match. Note: the commands were run in a non-interactive shell, so I could not physically press Tab; this is the expected behaviour described in the exercise.
+
+**Check your understanding:** `cd ..` moves up one level to the parent of the current directory, wherever you are. `cd ~` always jumps to your home directory, regardless of where you are.
+
+## Task 3 — Create and manage files
+
+Created in `~/shell-practice`:
+
+- `notes.txt` (contains "I am learning the Linux shell.", 31 bytes)
+- `notes-backup.txt` (copy of `notes.txt`, made with `cp` then renamed with `mv` from `backup.txt`)
+- `examples` (directory)
+- `my notes.txt` (empty file whose name contains a space)
+
+Results matched the expected output: `notes.txt` held my sentence, `notes-backup.txt` was an identical 31-byte copy, and `examples` showed as a directory (`d` in `ls -l`). `cat "my notes.txt"` ran successfully and printed nothing because the file is empty.
+
+**Check your understanding:** The shell splits arguments on spaces. Without quotes, `cat my notes.txt` would be read as two files, `my` and `notes.txt`. Quotes (or `my\ notes.txt`) keep it as one filename.
+
+## Task 4 — Help, history, and useful shortcuts
+
+- `ls --help` printed the usage summary and option list (for example `-a, --all` shows entries starting with `.`).
+- `type cd` returned `cd is a shell builtin`, meaning `cd` is built into Bash rather than being a separate program.
+- `man ls`: manual pages are **not installed** on this minimized system (it printed a "system has been minimized" notice), so I used `ls --help` instead, as the exercise instructs.
+- `history`: my commands ran in a non-interactive shell, so there was no saved history to list. In a normal terminal it prints numbered previous commands.
+- Shortcuts (behaviour as expected in an interactive Bash session): Up-arrow recalls the previous command, `Ctrl+R` searches history, `Ctrl+L` clears the screen.
+- **Most useful shortcut:** `Ctrl+R`, because it finds a long earlier command from just a word, saving retyping.
+
+## Task 5 — Redirection and pipes
+
+- `ls > listing.txt` saved the directory listing to a file.
+- `echo "Shell practice completed." >> listing.txt` appended a line. `cat listing.txt` showed the file names followed by that line (87 bytes).
+- `wc -l notes.txt` returned `1 notes.txt` (one line).
+- `ls -l | less`: `less` ran but, with no interactive terminal, I confirmed the pipe worked using `ls -l | head`, which showed the first lines of the long listing.
+
+**Check your understanding:** `>` sends output to a file and overwrites it. `>>` appends to the end of the file. `|` (pipe) sends the output of one command as the input of the next.
+
+## Task 6 — Review and reflect
+
+1. **Terminal vs shell:** The terminal is the window/program where you type and see text. The shell (Bash) is the program inside it that interprets and runs your commands.
+2. **`ls -l /etc`:** command = `ls`, option = `-l`, argument = `/etc`.
+3. **Absolute vs relative path:** An absolute path starts from the root `/` (for example `/home/user/notes.txt`). A relative path starts from the current directory (for example `examples/notes.txt`).
+4. **Tab autocompletion:** completes commands, file names and paths, and shows possible matches when pressed twice.
+5. **`..`:** the parent directory.
+6. **`>` vs `>>`:** `>` overwrites a file; `>>` appends to it.
+7. **Useful command:** `ls -la`, because it shows hidden files plus permissions, owner and size in one view.
+8. **To practise more:** pipes and combining commands (for example `ls | wc -l`), and getting comfortable with relative vs absolute paths.
+
+## Completion checklist
+
+- [x] Identified the operating system, kernel, username, and shell.
+- [x] Navigated to the home directory and created a practice directory.
+- [x] Used `pwd`, `ls`, and `cd`.
+- [x] Tried autocompletion and command history. (Described; not interactive here.)
+- [x] Created, copied, and renamed files.
+- [x] Opened a filename containing spaces.
+- [x] Used command help or a manual page.
+- [x] Used `>` and `>>` safely inside the practice directory.
+- [x] Tried a pipe.
+- [x] Answered the reflection questions.
+
+## Results log
+
+**Date completed:** 21 October 2026
+**Linux distribution/version:** Ubuntu 24.04.5 LTS (Noble Numbat)
+**Time taken:** About 10 minutes
+
+### Commands I ran successfully
+
+- `whoami`, `pwd`, `hostname`, `uname -r`, `cat /etc/os-release`, `echo "$SHELL"`
+- `cd ~`, `ls -la`, `mkdir shell-practice`, `cd shell-practice`
+- `touch`, `mkdir`, `echo >`, `cat`, `cp`, `mv`, `ls -l`
+- `ls --help`, `type cd`
+- `ls > listing.txt`, `echo >> listing.txt`, `wc -l`, `ls -l | head`
+
+### Output or observations
+
+- The system is Ubuntu, not RHEL, but every command behaved as the exercise describes.
+- Running as `root` means `~` is `/root`; on a normal account it would be `/home/<username>`.
+- `notes.txt` and `notes-backup.txt` are both 31 bytes, confirming the copy.
+- `cd` is a shell builtin.
+
+### Challenges and how I resolved them
+
+- `man` pages are not installed on this minimized system, so I used `ls --help`.
+- `history`, `Ctrl+R` and `Tab` need an interactive terminal; I recorded that and described the expected behaviour.
+- `less` needs an interactive terminal, so I used `ls -l | head` as the exercise suggests.
+
+### Reflection: what I learned
+
+The shell is a flexible way to move around and manage files. Quoting matters for names with spaces, `>` can silently overwrite, and pipes let small commands be chained together.
+
+### Next practice goal
+
+Practise on a real RHEL system, learn `grep` with pipes, and use `man` pages and permissions (`chmod`) in a safe practice area.
+
+## Quick revision quiz — answers
+
+1. Which command displays your current working directory? **`pwd`**
+2. What does pressing Tab commonly help you do in Bash? **Complete a command or path**
+3. What does `..` represent in a path? **The parent directory**
+4. In `ls -l /home`, what is `/home`? **An argument**
+5. Which command shows hidden directory entries? **`ls -a`**
+6. What does `>` do in `echo hello > notes.txt`? **Redirects output and overwrites the file**

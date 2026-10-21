@@ -1,0 +1,86 @@
+# Linux Distributions  (Answers)
+
+## Part A — Questions
+
+1. **What is the Linux kernel responsible for?**
+   The kernel is the core of the operating system. It manages the hardware (CPU, memory, disks, network devices), schedules processes, and provides a controlled way for programs to use those resources.
+
+2. **What extra components turn the kernel into a usable distribution?**
+   A shell and command-line tools, system libraries, an init/service manager (such as systemd), a package manager, an installer, configuration defaults, and often a desktop environment and applications.
+
+3. **One difference between a kernel and a distribution:**
+   The kernel is a single component that talks to hardware, while a distribution is a complete, packaged system (kernel plus software, tools, updates and support policy) that a person can actually install and use.
+
+4. **What is open-source software? Does it always mean free of cost?**
+   Open-source software has source code that anyone can read, modify and share under a licence. It does not always mean free of cost: "free" refers to freedom, not price. Companies such as Red Hat sell subscriptions for support, certified updates and services around open-source software.
+
+5. **Fedora's role in the Red Hat ecosystem:**
+   Fedora is the community-driven, fast-moving distribution sponsored by Red Hat. It is where new technologies are tried and developed, and it feeds ideas into later RHEL releases.
+
+6. **Where does CentOS Stream sit relative to Fedora and RHEL?**
+   It sits in the middle: downstream of Fedora and upstream of RHEL. It tracks the code that is being prepared for the next RHEL minor releases.
+
+7. **One reason to choose RHEL:**
+   It provides commercial support, long lifecycles and predictable, tested updates, which suits production systems that need stability and vendor backing.
+
+8. **Three ways distributions can differ:**
+   - Package format and package manager (RPM/DNF versus DEB/APT).
+   - Release model and lifecycle (rolling or fast releases versus long-term support).
+   - Default software, configuration and support model (community versus commercial).
+
+9. **What is a package manager, and why do dependencies matter?**
+   A package manager installs, updates and removes software from repositories and tracks what is installed. Dependencies are other packages a program needs in order to run; the package manager resolves and installs them so software does not break from missing or incompatible components.
+
+10. **RPM versus DNF (beginner level):**
+    RPM is the package format and low-level tool that installs, queries and removes individual package files, but it does not fetch dependencies. DNF is the higher-level package manager that uses repositories, downloads packages and resolves dependencies automatically (it uses RPM underneath).
+
+11. **Why check a distribution's lifecycle before planning an upgrade?**
+    The lifecycle shows how long the current version gets security fixes and support and when it reaches end of life. Knowing this lets an administrator schedule upgrades before support ends and avoid running unsupported, vulnerable systems.
+
+12. **Why might a command work on one distribution but not another?**
+    Distributions use different package managers, tools, default configuration, file locations, software versions and policies (for example `dnf install` on RHEL versus `apt install` on Ubuntu), so commands and results can differ.
+
+## Part B — Put the distributions in context
+
+| Distribution | Main role / characteristic | One thing to investigate |
+|---|---|---|
+| Fedora | Community-driven, fast-moving upstream for new features; short release cycle | How long each release is supported and how often it must be upgraded |
+| CentOS Stream | Rolling-release distribution between Fedora and RHEL, previewing upcoming RHEL minor releases | How its updates relate to the next RHEL minor release |
+| Red Hat Enterprise Linux (RHEL) | Commercially supported enterprise platform with a long lifecycle and stable updates | Subscription options, support levels and the lifecycle of each major version |
+
+**Relationship:** Fedora is the upstream innovation ground where new technology appears first. A portion of that work flows into CentOS Stream, which acts as the staging area for what will become the next RHEL minor releases. RHEL is the stable, supported enterprise product built from this process. In simple terms: Fedora, then CentOS Stream, then RHEL.
+
+## Part C — Command-line exploration
+
+Commands run: `cat /etc/os-release`, `whoami`, `dnf --version`, `rpm --version`, `rpm -qa | head -n 10`.
+
+- **Distribution name and version:** Ubuntu 24.04.5 LTS (Noble Numbat)
+- **Is DNF available?:** No (`dnf: command not found`)
+- **Is RPM available?:** No (`rpm: command not found`), so `rpm -qa` returned nothing
+- **What did you learn from the output?:** This is a Debian/Ubuntu-based system, so it uses APT (version 2.8.3) and DEB packages instead of DNF and RPM. I am running as `root`. This shows how the package tools differ between the Debian and Red Hat families.
+- **Were any commands unavailable?:** Yes: `dnf --version`, `rpm --version` and `rpm -qa | head -n 10`. I did not install them, as instructed.
+
+## Part D — Choose a distribution for a scenario
+
+1. **Learner exploring newer technologies and community software: Fedora.**
+   It gets new features and software versions quickly and has a large community. *Factor to check:* its short support window, which means frequent upgrades.
+
+2. **Developer wanting insight into the next RHEL minor release: CentOS Stream.**
+   It tracks the code being prepared for RHEL, so it previews upcoming changes. *Factor to check:* compatibility of their software with the changes, and how closely the Stream content matches the final RHEL release.
+
+3. **Business needing a supported enterprise platform with predictable maintenance: RHEL.**
+   It has vendor support, a long lifecycle and tested updates. *Factor to check:* support requirements and subscription cost, plus the lifecycle of the specific major version and application compatibility.
+
+## Part E — Reflection
+
+The most important concept was that Linux is not one product: the kernel is the core, and distributions package it with tools and support in different ways. I had not realised how Fedora, CentOS Stream and RHEL fit together as a pipeline from innovation to stable enterprise release. Understanding distributions helps in software development (choosing a consistent target platform), cloud computing (picking images and knowing their support lifecycle), and cybersecurity (knowing how patches arrive and when a system stops getting them). Next I would like to investigate how DNF repositories and module streams work, and how RHEL minor releases are managed.
+
+## Self-assessment checklist
+
+- [x] I can explain what the Linux kernel does.
+- [x] I can define a Linux distribution.
+- [x] I can describe the broad relationship between Fedora, CentOS Stream, and RHEL.
+- [x] I understand the basic purpose of RPM and DNF.
+- [x] I can name several ways distributions differ.
+- [x] I have recorded my command-line observations.
+- [x] I have answered the reflection questions.
