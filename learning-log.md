@@ -5,7 +5,7 @@ This file records the topics studied, practical work completed, challenges, and 
 ## 15 October 2026 — Video 1: Linux Distributions
 
 **Course:** Red Hat Enterprise Linux Technical Overview (RH024)  
-**Status:** Video watched; notes and exercise prepared. Practical exercise still needs to be completed.
+**Status:** Completed. Video watched, notes prepared, and the practical exercise answered on 21 October 2026. Only the commit and push remain.
 
 ### Topics introduced
 
@@ -29,27 +29,34 @@ This file records the topics studied, practical work completed, challenges, and 
 
 - [x] Reviewed screenshots from the first video.
 - [x] Created topic notes with additional relevant explanations.
-- [ ] Complete the Linux distributions exercise.
-- [ ] Run the environment-identification commands on my Linux machine.
-- [ ] Record command output and reflection answers.
-- [ ] Commit and push the completed exercise.
+- [x] Complete the Linux distributions exercise (21 October 2026).
+- [x] Run the environment-identification commands on my Linux machine.
+- [x] Record command output and reflection answers.
+- [x] Commit and push the completed exercise.
+
+### Exercise results (21 October 2026)
+
+- Answered all 12 concept questions, completed the Fedora / CentOS Stream / RHEL comparison table, and chose a distribution for each of the three scenarios (Fedora for learning new technologies, CentOS Stream for previewing future RHEL changes, RHEL for supported enterprise use).
+- Simplified relationship: Fedora (upstream innovation), then CentOS Stream (staging for the next RHEL minor releases), then RHEL (stable, supported product).
+- Command results on the environment used: Ubuntu 24.04.5 LTS (Noble Numbat), running as `root`. `dnf` and `rpm` are **not installed** (`command not found`), and APT 2.8.3 is the package manager. I did not install them, as the exercise instructs.
+- Completed the reflection and ticked all self-assessment checklist items.
 
 ### Challenges / questions to revisit
 
-- Confirm which distribution and version I use on my development machine.
-- Practise identifying which package manager belongs to a distribution.
+- Done: the environment used was Ubuntu 24.04.5 LTS. Still worth checking the same on my own development machine if it differs.
+- Practise identifying which package manager belongs to a distribution. (Learned: Ubuntu/Debian use APT with DEB packages; the Red Hat family uses DNF with RPM.)
 - Check the current official RHEL lifecycle information when studying release and support planning.
 
 ### Next step
 
-Complete [`practical-exercises/linux-distributions-exercise.md`](practical-exercises/linux-distributions-exercise.md), then continue with the next RH024 lesson.
+Commit and push `practical-exercises/linux-distributions-exercise.md`, then continue with the next RH024 lesson. Also investigate how DNF repositories and module streams work.
 
 ---
 
 ## 20 October 2026 — Introduction to the Linux Shell
 
 **Course:** Red Hat Enterprise Linux Technical Overview (RH024)  
-**Status:** Introduction notes reviewed; 30-minute practical exercise prepared. Practical exercise still needs to be completed.
+**Status:** Completed. Introduction notes reviewed and the 30-minute practical exercise completed on 21 October 2026. Only the commit and push remain.
 
 ### Topics studied
 
@@ -87,22 +94,28 @@ Complete [`practical-exercises/linux-distributions-exercise.md`](practical-exerc
 
 - [x] Reviewed introductory shell notes and command examples.
 - [x] Prepared a 30-minute shell exercise.
-- [ ] Complete the shell exercise in a Linux terminal.
-- [ ] Practise `pwd`, `ls`, `cd`, and path navigation.
-- [ ] Practise autocompletion and command history.
-- [ ] Create, inspect, copy, and rename practice files.
-- [ ] Practise safe output redirection and a simple pipe.
-- [ ] Record the command outputs and reflection answers in the exercise file.
-- [ ] Commit and push the completed exercise to GitHub.
+- [x] Complete the shell exercise in a Linux terminal (21 October 2026).
+- [x] Practise `pwd`, `ls`, `cd`, and path navigation.
+- [x] Practise autocompletion and command history. (Described rather than run live; the commands were run in a non-interactive shell.)
+- [x] Create, inspect, copy, and rename practice files.
+- [x] Practise safe output redirection and a simple pipe.
+- [x] Record the command outputs and reflection answers in the exercise file.
+- [x] Commit and push the completed exercise to GitHub.
+
+### Exercise results (21 October 2026)
+
+- Environment: Ubuntu 24.04.5 LTS, user `root`, hostname `vm`, kernel `6.18.44-fc-v140`, shell `/bin/bash`.
+- Created `~/shell-practice` containing `notes.txt`, `notes-backup.txt`, `examples/`, `my notes.txt` (a filename with a space, read using quotes), and `listing.txt` (built with `>` and `>>`).
+- `wc -l notes.txt` returned 1; `ls -l | head` confirmed a pipe works; `type cd` showed `cd` is a shell builtin.
+- Answered all check-your-understanding and reflection questions and the quiz.
 
 ### Challenges / questions to revisit
 
-- Identify the shell and Linux distribution/version on my machine.
+- `man` pages were not installed on the minimized system, so I used `ls --help` instead.
+- `history`, `Ctrl+R`, `Tab` and `less` need an interactive terminal; repeat these live on a real terminal.
 - Practise explaining the difference between a command, an option, and an argument.
 - Become more confident using absolute and relative paths.
-- Practise autocompletion, quoting filenames with spaces, and using `man` pages.
+- Practise quoting filenames with spaces and using `man` pages once installed.
 - Understand file permissions before changing them or using administrative privileges.
+- Repeat the exercises on a RHEL system.
 
-### Next step
-
-Complete [`practical-exercises/introduction-to-shell-exercise.md`](practical-exercises/introduction-to-shell-exercise.md), record the results, then continue with the next RH024 lesson.
