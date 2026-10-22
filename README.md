@@ -21,12 +21,12 @@ I will use this repository to record my notes, practical exercises, commands, tr
 
 ## Topics Covered
 
-The following topics will be documented as I progress through the course and practical exercises.
+The following topics are documented as I progress through the course and practical exercises.
 
-- [ ] Introduction to Linux and Red Hat Enterprise Linux
+- [x] Introduction to Linux and Red Hat Enterprise Linux (Linux distributions: kernel, distributions, Fedora, CentOS Stream, RHEL, RPM and DNF)
 - [ ] Linux architecture and operating system fundamentals
-- [ ] Command-line navigation and essential commands
-- [ ] File and directory management
+- [x] Command-line navigation and essential commands (introduction to the shell)
+- [ ] File and directory management (started: create, copy, rename and quoting filenames)
 - [ ] File permissions and ownership
 - [ ] User and group management
 - [ ] Processes and system resource monitoring
@@ -35,6 +35,7 @@ The following topics will be documented as I progress through the course and pra
 - [ ] Networking fundamentals
 - [ ] System logs and troubleshooting
 - [ ] Practical exercises and revision notes
+- [ ] Documentation and man pages (notes written and exercise prepared; exercise not yet completed)
 
 *Progress will be updated as each topic is studied and practised.*
 
@@ -45,13 +46,13 @@ red-hat-linux-administration/
 ├── README.md
 ├── notes/
 │   ├── linux-fundamentals.md
-│   ├── introduction to shell
-│   ├── 
-│   ├── 
+│   ├── introduction-to-shell.md
+│   ├── rhel-documentation-study-notes.md
 │   └── 
 ├── practical-exercises/
-│   ├── Linux distributions 
-│   ├── Introduction to shell
+│   ├── linux-distributions-exercise.md
+│   ├── introduction-to-shell-exercise.md
+│   ├── documentation-man-pages-exercise.md
 │   └── 
 └── progress/
     └── learning-log.md
@@ -90,8 +91,28 @@ Some basic commands I will practise and document include:
 | `df -h` | Display filesystem disk usage |
 | `free -h` | Display memory usage |
 | `ps aux` | Display running processes |
+| `man command` | Open the manual page for a command |
+| `man 5 passwd` | Open a specific man page section (5 = file formats and config files) |
+| `man -k keyword` | Search manual pages by keyword |
+| `command --help` | Show a quick usage summary |
+| `type command` | Show how the shell interprets a command |
+| `tar -cvf name.tar dir` | Create an archive |
+| `tar -tvf name.tar` | List the contents of an archive |
+| `tar -xvf name.tar -C dir` | Extract an archive into a directory |
 
 These examples are an initial practice list, not a claim that every topic has been completed.
+
+## Documentation, Man Pages and Config Files
+
+Part of the RH024 course covers finding help on the system itself, without internet access.
+
+- **Man pages:** `man` opens the online manuals on the system. Use `/word` to search, `n` for the next match and `q` to quit.
+- **Sections:** the same name can exist in several sections. `man passwd` shows the command, while `man 5 passwd` shows the format of the `/etc/passwd` file.
+- **Searching:** `man -k keyword` finds pages by topic and `man -f command` gives a one-line description.
+- **Arguments:** a command line has the form `command [options] [arguments]`, and some options take their own value, such as `-f archive.tar` in `tar`.
+- **Config files:** system-wide configuration is mostly in `/etc`, and man page section 5 documents the file formats.
+
+Example: `tar -xvf project.tar -C restore` extracts `project.tar` into the existing directory `restore`.
 
 ## Learning Log
 
@@ -102,6 +123,8 @@ I will use the learning log to track:
 - **Practical work:** Commands or exercises completed.
 - **Challenges:** Errors or concepts that needed further research.
 - **Key takeaways:** What I learned and how I can apply it.
+
+Completed so far: Linux distributions (15 October 2026), introduction to the shell (20 October 2026). In progress: documentation and man pages (21 October 2026). See `progress/learning-log.md`.
 
 ## Resources
 
@@ -122,6 +145,7 @@ docs: document essential command-line commands
 learn: add file management exercises
 learn: document Linux permissions
 docs: update learning progress log
+docs: add documentation and man pages notes
 ```
 
 ## Career Goals

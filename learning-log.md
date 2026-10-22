@@ -119,3 +119,50 @@ Commit and push `practical-exercises/linux-distributions-exercise.md`, then cont
 - Understand file permissions before changing them or using administrative privileges.
 - Repeat the exercises on a RHEL system.
 
+---
+
+## 21 October 2026: Documentation, man pages and config files
+
+**Course:** Red Hat Enterprise Linux Technical Overview (RH024)  
+**Status:** Study notes written and practical exercise prepared. Practical exercise still needs to be completed.
+
+### Topics studied
+
+- Online manuals on the system and why they matter when working without internet access.
+- The `man` command and man pages: reading NAME, SYNOPSIS, DESCRIPTION, OPTIONS, EXAMPLES, FILES and SEE ALSO.
+- Navigating man pages: Space, `b`, `/word`, `n`, `N`, `q`.
+- Man page sections: 1 user commands, 5 file formats and config files, 8 administration commands.
+- Searching manuals with `man -k` (apropos) and `man -f` (whatis).
+- Other help sources: `--help`, `help`, `type`, `info`, `/usr/share/doc`, and `rpm -qd` / `rpm -qc`.
+- How commands work with options and arguments, including option arguments such as the file name after `-f`.
+- Worked `tar` examples: create (`-c`), list (`-t`), extract (`-x`), compress (`-z`) and extract to a directory (`-C`).
+- Configuration files: system-wide files in `/etc`, per-user hidden files, and backing up before editing.
+
+### Key takeaways
+
+- Learn where to look rather than memorising every option.
+- The same name can exist in several man sections, so `man passwd` and `man 5 passwd` show different things.
+- A command line has the form command, options, arguments. Some options need their own value.
+- Keep `-f` last in a combined `tar` option cluster, for example `-cvf archive.tar dir`.
+- Use `tar -tvf` to list an archive before extracting it.
+- Man page section 5 and the FILES part of a man page lead to config file documentation.
+
+### Practical work
+
+- [x] Wrote study notes on documentation and man pages.
+- [x] Verified the `tar` examples in a temporary directory (create, list, compress, extract).
+- [x] Prepared a 30-minute practical exercise.
+- [x] Complete the exercise in a Linux terminal.
+- [x] Record outputs and reflection answers.
+- [x] Commit and push the notes and exercise to GitHub.
+
+### Challenges / questions to revisit
+
+- `man` pages may not be installed on minimal systems, so practise on a full RHEL install (`man-db` and `man-pages` packages).
+- `man -k` needs the manual index (`mandb`) built, which needs administrator rights.
+- Practise reading a SYNOPSIS and telling optional parts from required ones.
+- Learn the config files for common services such as SSH and networking.
+
+### Next step
+
+Complete `practical-exercises/documentation-man-pages-exercise.md`, record the results, then continue with the next RH024 lesson.
