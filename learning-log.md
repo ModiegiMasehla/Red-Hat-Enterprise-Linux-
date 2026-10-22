@@ -163,6 +163,12 @@ Commit and push `practical-exercises/linux-distributions-exercise.md`, then cont
 - Practise reading a SYNOPSIS and telling optional parts from required ones.
 - Learn the config files for common services such as SSH and networking.
 
-### Next step
+### 22 October: Command line assistant -Key takeaways for your learning log
 
-Complete `practical-exercises/documentation-man-pages-exercise.md`, record the results, then continue with the next RH024 lesson.
+- RHEL Lightspeed provides optional AI-powered assistance from the command line.
+- The assistant can answer RHEL questions, explain logs, recommend solutions, and support troubleshooting.
+- Users can ask questions in natural language rather than memorizing every command.
+- The documented command-line interface uses `c "your question"` when installed and configured.
+- The assistant does not automatically have direct access to all live system information.
+- AI-generated suggestions must be checked for accuracy, safety, and relevance.
+- Sensitive information should not be entered into the assistant.
